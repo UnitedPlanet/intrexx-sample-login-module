@@ -1,0 +1,28 @@
+
+plugins {
+	id 'java-library'
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+repositories {
+	jcenter()
+
+	maven {
+		url 'https://maven.unitedplanet.com'
+	}
+}
+
+
+dependencies {
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+	api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.+'
+	api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.+'
+	api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.+'
+
+	testImplementation 'junit:junit:4.12'
+}
