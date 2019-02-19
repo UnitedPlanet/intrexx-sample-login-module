@@ -52,3 +52,9 @@ MyVerySpecialAuth
 };
 ```
 
+
+
+## Additional Documentation
+
+[Java Authentication and Authorization Service (JAAS): LoginModule Developer's Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASLMDevGuide.html)
+
