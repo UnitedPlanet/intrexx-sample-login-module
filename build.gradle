@@ -20,9 +20,9 @@ repositories {
 dependencies {
 	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
 
-	api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.0.+'
-	api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.0.+'
-	api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.0.+'
+	api group: 'de.uplanet.lucy', name: 'ix-common',        version: '8.1.+'
+	api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '8.1.+'
+	api group: 'de.uplanet.lucy', name: 'ix-server',        version: '8.1.+'
 
 	testImplementation 'junit:junit:4.12'
 }
