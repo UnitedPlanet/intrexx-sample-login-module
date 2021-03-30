@@ -34,10 +34,9 @@ import org.slf4j.LoggerFactory;
 
 import de.uplanet.jdbc.JdbcConnection;
 import de.uplanet.lucy.auth.LOGIN_TOKEN_TYPE;
-import de.uplanet.lucy.security.principal.IxDsClassPrincipal;
+import de.uplanet.lucy.security.principal.IxPrincipal;
 import de.uplanet.lucy.server.ContextConnection;
 import de.uplanet.lucy.server.auth.AuthConfiguration;
-import de.uplanet.lucy.server.auth.PrincipalUtil;
 import de.uplanet.lucy.server.auth.module.LoginDomainCallback;
 import de.uplanet.lucy.server.auth.module.LoginTokens;
 import de.uplanet.lucy.server.auth.module.PasswordCallback;
@@ -62,7 +61,7 @@ public final class MyPasswordLoginModule implements LoginModule
 	/** Helper for logging. */
 	private static final Logger ms_log = LoggerFactory.getLogger(MyPasswordLoginModule.class);
 
-	private final ILoginUtil m_loginUtil = new LoginUtil();
+	private final ILoginUtil m_loginUtil;
 
 	/** The subject. */
 	private Subject m_subject;
@@ -98,12 +97,18 @@ public final class MyPasswordLoginModule implements LoginModule
 	private boolean m_bDebug;
 
 
-	/*
-	 * Explicit default constructor.
-	 */
 	public MyPasswordLoginModule()
 	{
+		this(new LoginUtil());
 	}
+
+
+	protected MyPasswordLoginModule(ILoginUtil p_loginUtil)
+	{
+		m_loginUtil = p_loginUtil;
+	}
+
+
 
 
 	@Override
@@ -147,7 +152,7 @@ public final class MyPasswordLoginModule implements LoginModule
 			catch (UnsupportedCallbackException l_e)
 			{
 				if (m_bDebug)
-					ms_log.info("Unsupported callback (" + l_e.getMessage() + "). Ignoring the login module.");
+					ms_log.info("This login module is being ignored (" + l_e.getMessage() + ").");
 
 				return false; // ignore this login module
 			}
@@ -249,8 +254,8 @@ public final class MyPasswordLoginModule implements LoginModule
 	@Override
 	public boolean commit() throws LoginException
 	{
-		final Set<IxDsClassPrincipal> l_principals;
-		final JdbcConnection          l_conn;
+		final Set<IxPrincipal> l_principals;
+		final JdbcConnection   l_conn;
 
 		m_bCommitSucceeded = false;
 
@@ -261,7 +266,7 @@ public final class MyPasswordLoginModule implements LoginModule
 
 		try
 		{
-			l_principals = PrincipalUtil.getUserSubjectPrincipals(l_conn, m_strId);
+			l_principals = m_loginUtil.getUserSubjectPrincipals(l_conn, m_strId);
 
 			m_subject.getPrincipals().addAll(l_principals);
 
