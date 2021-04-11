@@ -9,7 +9,7 @@ targetCompatibility = JavaVersion.VERSION_11
 
 
 repositories {
-	jcenter()
+	mavenCentral()
 
 	maven {
 		url 'https://maven.unitedplanet.com'
@@ -26,3 +26,4 @@ dependencies {
 
 	testImplementation 'junit:junit:4.13.1'
 }
+
