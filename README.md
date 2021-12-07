@@ -9,10 +9,11 @@ The login credentials used are user name, an optional login domain, and a passwo
 
 ## Requirements
 
-* Intrexx 10.0 or greater
-* Java SE Development Kit 11
+* Intrexx 10.1 or greater
+* Java SE Development Kit 16
 
-For Intrexx 8.0, 8.1, and 9.2 see tags intrexx-v8.0, intrexx-v8.1, and intrexx-v9.2 respectively. 
+For Intrexx 8.0, 8.1, 9.2 see tags intrexx-v8.0, intrexx-v8.1, intrexx-v9.2, and
+intrexx-v10.0 respectively.
 
 
 ## Building from source
@@ -26,8 +27,7 @@ cd intrexx-sample-login-module
 
 ## Import as an Eclipse project
 
-This assumes that you have [Buildship Gradle Integration](https://marketplace.eclipse.org/content/buildship-gradle-integration)
-installed.
+This assumes that you have [Buildship](https://projects.eclipse.org/projects/tools.buildship) installed.
 
 ```bash
 git clone https://github.com/UnitedPlanet/intrexx-sample-login-module.git
@@ -58,5 +58,5 @@ MyVerySpecialAuth
 
 ## Additional Documentation
 
-[Java Authentication and Authorization Service (JAAS): LoginModule Developer's Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jaas/JAASLMDevGuide.html)
+[Java Authentication and Authorization Service (JAAS): LoginModule Developer's Guide](https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas-loginmodule-developers-guide1.html)
 
