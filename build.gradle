@@ -5,8 +5,8 @@ plugins {
 
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_11
-	targetCompatibility = JavaVersion.VERSION_11
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 
 
@@ -20,12 +20,11 @@ repositories {
 
 
 dependencies {
-	implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.32'
+	implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.6'
 
-	api group: 'de.uplanet.lucy', name: 'ix-common',        version: '10.+'
-	api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '10.+'
-	api group: 'de.uplanet.lucy', name: 'ix-server',        version: '10.+'
+	api group: 'de.uplanet.lucy', name: 'ix-common',        version: '11.0.+', transitive: false
+	api group: 'de.uplanet.lucy', name: 'ix-server-common', version: '11.0.+', transitive: false
+	api group: 'de.uplanet.lucy', name: 'ix-server',        version: '11.0.+', transitive: false
 
 	testImplementation 'junit:junit:4.13.1'
 }
-
