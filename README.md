@@ -9,11 +9,11 @@ The login credentials used are user name, an optional login domain, and a passwo
 
 ## Requirements
 
-* Intrexx 11 or greater
-* Java SE Development Kit 17
+* Intrexx 12 or greater
+* Java SE Development Kit 21
 
-For Intrexx 8.0, 8.1, 9.2, 10.0, 11.0 see tags intrexx-v8.0, intrexx-v8.1, intrexx-v9.2,
-intrexx-v10.0, and intrexx-v11.0 respectively.
+For Intrexx 8.0, 8.1, 9.2, 10.0, 11.0, 12.0 see tags intrexx-v8.0, intrexx-v8.1, intrexx-v9.2,
+intrexx-v10.0, intrexx-v11.0, and intrexx-v12.0 respectively.
 
 
 ## Building from source
@@ -58,5 +58,5 @@ MyVerySpecialAuth
 
 ## Additional Documentation
 
-[Java Authentication and Authorization Service (JAAS): LoginModule Developer's Guide](https://docs.oracle.com/en/java/javase/17/security/java-authentication-and-authorization-service-jaas-loginmodule-developers-guide1.html)
+[Java Authentication and Authorization Service (JAAS): LoginModule Developer's Guide](https://docs.oracle.com/en/java/javase/21/security/java-authentication-and-authorization-service-jaas-loginmodule-developers-guide1.html)
 
