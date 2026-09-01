@@ -4,6 +4,7 @@
 .classpath
 .idea
 .gradle
+.vscode
 build
 target
 bin

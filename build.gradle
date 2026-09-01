@@ -14,16 +14,16 @@ repositories {
 	mavenCentral()
 
 	maven {
-		url = 'https://maven.unitedplanet.com'
+		url = 'https://maven.intrexx.com'
 	}
 }
 
 
 dependencies {
-	implementation group: 'org.slf4j',       name: 'slf4j-api',        version: '2.0.13'
-	implementation group: 'de.uplanet.lucy', name: 'ix-common',        version: '12.+', transitive: false
-	implementation group: 'de.uplanet.lucy', name: 'ix-server-common', version: '12.+', transitive: false
-	implementation group: 'de.uplanet.lucy', name: 'ix-server',        version: '12.+', transitive: false
+	implementation 'org.slf4j:slf4j-api:2.0.13'
+	implementation('de.uplanet.lucy:ix-common:12.+') { transitive = false }
+	implementation('de.uplanet.lucy:ix-server-common:12.+') { transitive = false }
+	implementation('de.uplanet.lucy:ix-server:12.+') { transitive = false }
 
 	testImplementation 'junit:junit:4.13.2'
 }
